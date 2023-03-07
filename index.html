@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="RoboRefIt: An RGB-D Visual Grounding Dataset with Cluttered Indoor Scenes for Human-Robot Interaction.">
+        content="RoboRefIt">
   <meta name="keywords" content="RoboRefIt, Visual Grounding, Robot">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RoboRefIt</title>
@@ -24,6 +24,30 @@
 
 
   </script>
+  
+  
+	<style>
+       .div_photo{
+               height:300px;
+               width:40%;
+               float:left;
+               margin-left:30px;
+               margin-top:10px;
+               margin-bottom: 30px;
+        }
+       .div_phototime{
+               height:25px;
+               width:40%;
+               text-align:center;
+               line-height:25px;
+               position: absolute;
+        }
+      .div_body{
+        width:100%;
+        height:800px;
+        margin-top:10px;
+      }
+	</style> 
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -42,16 +66,14 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+  
 <body>
-
-
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">RoboRefIt: An RGB-D Visual Grounding Dataset with Cluttered Indoor Scenes for Human-Robot Interaction</h1>
+          <h1 class="title is-1 publication-title">RoboRefIt </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               Yuhao Lu,</span>
@@ -80,6 +102,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               
+
  
               <!-- Video Link. -->
               
@@ -122,26 +145,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The intelligence and diversity of robot applications have been closely related to the 
-            technical achievements of computer vision and natural language processing fields. 
-            Some current researches of voice interactive robot manipulation attempt to integrate the 
-            visual grounding tasks into the robot operation engine. However, the existing visual grounding 
-            datasets are hard to be used as a suitable practical test bed for robotics because of their low 
-            consistency in the following points: the relevance of instruction language, the practicality of 
-            objects and scenes, and the diversity of ambiguous comparison.
-          </p>
-          <p>
-            In this work, we propose a new challenging visual grounding dataset for robotic perception and
-            reasoning in indoor environments, called RoboRefIt. The RoboRefIt dataset collects 
-            10,872 real-world RGB images and depth images from cluttered daily life scenes, 
-            and generates 50,758 referring expressions in the form of robot instructions for objects of 
-            these images. Moreover, nearly half of the images contain samples of ambiguity confrontation. 
-            Experiments demonstrate the availability and reasonability of the RoboRefIt. 
-            And the RoboRefIt is potential and promising to provide a research basis for 
-            the visual grounding with 3D data or scene adaptation.
-          </p>
-          <p>
-            We hope to provide a distinctive training bed of visual grounding tasks
+            Multi-model learning of vision-and-language is beneficial for improving the robotic interaction and perception 
+            ability under complex environments. Visual grounding is an emerging vision-and-language task that aims to find 
+            the unique target in the picture by a referring expression. Some current researches of voice interactive robot 
+            manipulation have attempted to integrate the visual grounding task into the robot operation engine. However, 
+            existing visual grounding datasets are hard to be used as a suitable practical test bed for human-robot 
+            interaction because of their low correlation with robotics. In the work of the <b>VL-Grasp</b>, we contribute a new challenging 
+            visual grounding dataset for robotic perception and reasoning in indoor environments, called <b>RoboRefIt</b>. 
+            The RoboRefIt collects 10,872 real-world RGB and depth images from cluttered daily life scenes, and generates 
+            50,758 referring expressions in the form of robot language instructions. Moreover, nearly half of the images 
+            involve ambiguous object recognition. 
+            We hope that the RoboRefIt provides a distinctive training bed of visual grounding tasks
             for the robot interactive grasp.
           </p>
         </div>
@@ -154,6 +168,22 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+
+    <!-- Overview. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The RoboRefIt dataset is proposed in the work of the <b>VL-Grasp</b>.
+            The RoboRefIt dataset is a new challenging visual grounding dataset and is specially designed for the robot interactive grasp task.
+            Data collection, data annotation and datasets comparison details can be found in the <b>VL-Grasp</b>. The content of this homepage
+            is mainly used as a supplement to the VL-Grasp paper, introducing the dataset statistics, datasheets, data format, and so on.
+        </div>
+      </div>
+    </div>
+    <!--/ Overview. -->
     
     <!-- Dataset Statistics. -->
     <div class="columns is-centered">
@@ -164,26 +194,32 @@
         
           <p>
             We make statistics on the some main data components of the RoboRefIt dataset. First, in the aspect of text content,
-            the average length of the sentences is 9.5 and the detailed distribution of sentence lengths is shown in Figure1.
-            Figure2 reflects the frequency of words or phrases in expressions according to the size. 
-            <img src="./static/images/sentence_len.png />  img src="./static/images/wordcloud.png />
+            the average length of the sentences is 9.5 and the detailed distribution of sentence lengths is shown in <b>Figure1</b>.
+            <b>Figure2</b> reflects the frequency of words or phrases in expressions according to the size. 
+
             
             Second, in the aspect of object selection, the RoboRefIt dataset
-            contains 66 categories of objects and the distribution of number of instances per category is shown in Figure3.
-            <img src="/static/images/sentence_len.png" width="128" height="128" />
-            Figure4 shows the cumulative distribution curve of the size of the bounding boxes and 
+            contains 66 categories of objects and the distribution of number of instances per category is shown in <b>Figure3</b>.
+           
+            <b>Figure4</b> shows the cumulative distribution curve of the size of the bounding boxes and 
             the masks, where a large number of objects have a pixel area from 10<sup> 3</sup> to 10<sup> 4</sup>. 
-            Third, in the aspect of scene collection, the objects of the RoboRefIt are distributed in six life scenes as is shown in Figure5. 
+            Third, in the aspect of scene collection, the objects of the RoboRefIt are distributed in six life scenes as is shown in <b>Figure5</b>. 
             Further, for example, there are 24,521 objects collected from the table scene, while these tables are also diverse.
-            <img src="/static/images/bbox_mask_size.png" width="128" height="128" /> 
-            <img src="/static/images/scene_distribution.png" width="128" height="128" />
+            
           </p>
-          <p>
-            The RoboRefIt comprises 10,872 RGB-D images and 50,758 language expressions. 
-            There are 204 instances of objects involving 66 categories. These objects present at the images as the targets.
-            You can understand these objects more clearly by the
-            <a href="https://drive.google.com/u/0/uc?id=1WgOnBFogPedgcO5oDaO3-ZTAdGsyGIhq&export=download">Object list.</a>
-          </p>
+          <div>
+                      <div class="div_photo"><img src="static/images/sentence_len.png" /><div  class="div_phototime" >Figure1</div></div>
+                      <div class="div_photo"><img src="static/images/wordcloud.png" /><div  class="div_phototime">Figure2</div></div>
+                      <div class="column is-full-width">
+                      <img src="static/images/cat.png" height="500" width="800"/><div class="columns is-centered">Figure3</div>
+                      </div>     
+                  </div>
+          <div>
+            <div class="column is-full-width"></div>
+            <div class="div_photo"><img src="static/images/bbox_mask_size.png" /><div  class="div_phototime">Figure4</div></div>
+            <div class="div_photo"><img src="static/images/scene_distribution.png" /><div  class="div_phototime">Figure5</div></div>   
+          </div>
+
         </div>
       </div>
     </div>
