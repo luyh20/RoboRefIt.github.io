@@ -34,6 +34,7 @@
                margin-left:30px;
                margin-top:10px;
                margin-bottom: 30px;
+               margin-right: 30px;
         }
        .div_phototime{
                height:25px;
@@ -108,7 +109,7 @@
               
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/luyh20/RoboRefIt"
+                <a href="https://github.com/luyh20/VL-Grasp"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -180,6 +181,11 @@
             The RoboRefIt dataset is a new challenging visual grounding dataset and is specially designed for the robot interactive grasp task.
             Data collection, data annotation and datasets comparison details can be found in the <b>VL-Grasp</b>. The content of this homepage
             is mainly used as a supplement to the VL-Grasp paper, introducing the dataset statistics, datasheets, data format, and so on.
+            <div>
+              <div class="column is-full-width">
+                <img src="static/images/example.png" height="700" width="900"/><div class="columns is-centered">Figure 1</div>
+              </div>  
+              </div>
         </div>
       </div>
     </div>
@@ -194,30 +200,30 @@
         
           <p>
             We make statistics on the some main data components of the RoboRefIt dataset. First, in the aspect of text content,
-            the average length of the sentences is 9.5 and the detailed distribution of sentence lengths is shown in <b>Figure1</b>.
-            <b>Figure2</b> reflects the frequency of words or phrases in expressions according to the size. 
+            the average length of the sentences is 9.5 and the detailed distribution of sentence lengths is shown in <b>Figure 2</b>.
+            <b>Figure 3</b> reflects the frequency of words or phrases in expressions according to the size. 
 
             
             Second, in the aspect of object selection, the RoboRefIt dataset
-            contains 66 categories of objects and the distribution of number of instances per category is shown in <b>Figure3</b>.
+            contains 66 categories of objects and the distribution of number of instances per category is shown in <b>Figure 4</b>.
            
-            <b>Figure4</b> shows the cumulative distribution curve of the size of the bounding boxes and 
+            <b>Figure 5</b> shows the cumulative distribution curve of the size of the bounding boxes and 
             the masks, where a large number of objects have a pixel area from 10<sup> 3</sup> to 10<sup> 4</sup>. 
-            Third, in the aspect of scene collection, the objects of the RoboRefIt are distributed in six life scenes as is shown in <b>Figure5</b>. 
+            Third, in the aspect of scene collection, the objects of the RoboRefIt are distributed in six life scenes as is shown in <b>Figure 6</b>. 
             Further, for example, there are 24,521 objects collected from the table scene, while these tables are also diverse.
             
           </p>
           <div>
-                      <div class="div_photo"><img src="static/images/sentence_len.png" /><div  class="div_phototime" >Figure1</div></div>
-                      <div class="div_photo"><img src="static/images/wordcloud.png" /><div  class="div_phototime">Figure2</div></div>
+                      <div class="div_photo"><img src="static/images/sentence_len.png" /><div  class="div_phototime" >Figure 2</div></div>
+                      <div class="div_photo"><img src="static/images/wordcloud.png" /><div  class="div_phototime">Figure 3</div></div>
                       <div class="column is-full-width">
-                      <img src="static/images/cat.png" height="500" width="800"/><div class="columns is-centered">Figure3</div>
+                      <img src="static/images/cat.png" height="500" width="800"/><div class="columns is-centered">Figure 4</div>
                       </div>     
                   </div>
           <div>
             <div class="column is-full-width"></div>
-            <div class="div_photo"><img src="static/images/bbox_mask_size.png" /><div  class="div_phototime">Figure4</div></div>
-            <div class="div_photo"><img src="static/images/scene_distribution.png" /><div  class="div_phototime">Figure5</div></div>   
+            <div class="div_photo"><img src="static/images/bbox_mask_size.png" /><div  class="div_phototime">Figure 5</div></div>
+            <div class="div_photo"><img src="static/images/scene_distribution.png" /><div  class="div_phototime">Figure 6</div></div>   
           </div>
 
         </div>
@@ -225,7 +231,33 @@
     </div>
     <!--/ Dataset Statistics. -->
     
-    
+    <!-- Comparison of train-testA-testB Splits. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Comparison of train-testA-testB Splits</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The RefIndoor split the raw dataset into the train set, the testA set and the testB set. The train set contains 7929 images
+            and 36915 sentences. The testA set contains 1859 images and 8523 sentences and the testB set contains 1083 images and 5320 sentences.
+            The difference between the testA set and the testB set is the correlation of scene distribution with the training set.
+            The testB set is a more difficult set than the testA set. 
+            As shown in the <b>Figure 7</b>, the distribution of the train set is long-tailed 
+            and the distribution curve of the testA is similar to the trend of the train set. But there are clustered samples of the tail categories in the testB.
+            As is shown in <b>Figure 8</b>, the testA set is similar with the train set in the proportion of the number of instances among the six scenes, 
+            while the testB set has a different distribution. For instance, the testB contains novel scenes, like drawer scenes, new table scenes and new sofa scenes.
+            <div>
+              <div class="column is-full-width"></div>
+              <div class="div_photo"><img src="static/images/comparison_of_sets.png" /><div  class="div_phototime">Figure 7</div></div>
+              <div class="div_photo"><img src="static/images/result.png" /><div  class="div_phototime">Figure 8</div></div>   
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Comparison of train-testA-testB Splits. -->
+
+
     <!-- Datasheets. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
@@ -237,9 +269,19 @@
             Each RGB image corresponds to a depth image, and multiple expressions, masks, bounding boxes. 
             Each expression describes an object in the image and corresponds one mask and one bounding box.
           </p>
+          <div>
+            <div class="column is-full-width">
+              <img src="static/images/objtable.png" height="700" width="900"/><div class="columns is-centered">Table 1</div>
+            </div>  
+            </div>
           <p>
             The RoboRefIt comprises 10,872 RGB-D images and 50,758 language expressions. 
-            There are 204 instances of objects involving 66 categories. These objects present at the images as the targets.
+            There are 150 instances of objects involving 66 categories. These objects present at the images as the targets.
+            The object set of the RefIndoor includes 66 object categories and 150 instances. In order to make the statistics clearer, 
+            <b>Table 1</b>
+            
+            shows the number of instances per category. The instance here refers to the target object used 
+            in the process of actually placing objects and collecting pictures. Each category may contains multiple objects.
             You can understand these objects more clearly by the
             <a href="https://drive.google.com/u/0/uc?id=1WgOnBFogPedgcO5oDaO3-ZTAdGsyGIhq&export=download">Object list.</a>
           </p>
@@ -247,6 +289,24 @@
       </div>
     </div>
     <!--/ Datasheets. -->
+
+    <!-- Visualization. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Visualization Results of Visual Grounding</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We benchmark the RefIndoor dataset in referring expression comprehension (REC) and referring expression segmentation
+            (RES) tasks. There are some visualization results in the <b>Figure 9</b>. There are four rows of results in Figure 9: referring expressions, 
+            images with bounding boxes(the red is the ground truth, and the blue is the prediction), ground truth of masks, prediction of masks.
+              <Figure><img src="static/images/visual.png"><div class="columns is-centered">Figure 9</div></Figure>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Visualization. -->
+
 
     <!-- Formats. -->
     <div class="columns is-centered">
